@@ -1,0 +1,223 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Contêiner principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cabeçalho com ícones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="#333333"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/back"
+                android:tint="#FFFFFF"
+                tools:ignore="ContentDescription,RtlHardcoded,UseAppTint" />
+
+            <ImageView
+                android:id="@+id/logoIcon"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="310dp"
+                android:src="@drawable/logo"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+        </LinearLayout>
+
+        <!-- Título Principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#9AE84C"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Como funciona o nosso sistema"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+        </LinearLayout>
+
+        <!-- Descrição do Sistema -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nosso sistema de gerenciamento de energia renovável é projetado para monitorar, registrar e analisar a produção de energia de fontes renováveis, como solar e eólica. Com ele, é possível acompanhar a geração de energia em tempo real, gerenciar usuários e visualizar relatórios detalhados."
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,VisualLintLongText" />
+
+        <!-- Título Funcionalidades -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Principais Funcionalidades:"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <!-- Funcionalidades -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Inserção de Dados: Registre as informações de produção diária ou semanal de energia. Esses dados podem incluir a quantidade de energia gerada, as condições climáticas e outras variáveis importantes para o monitoramento."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Histórico de Produção: Visualize o histórico completo de produção de energia, com gráficos e tabelas que mostram a evolução ao longo do tempo. Isso facilita o acompanhamento de tendências e a comparação entre períodos."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Metas de Produção: Defina metas mensais ou anuais de produção para incentivar o uso otimizado das fontes renováveis. Acompanhe o progresso para alcançar essas metas e mantenha-se motivado para aumentar a eficiência energética."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Relatórios e Estatísticas: Gere relatórios detalhados com base nos dados registrados. Esses relatórios incluem gráficos que ajudam a visualizar os padrões de geração de energia, identificar picos e quedas, e analisar o desempenho das fontes de energia."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Gerenciamento de Usuários: Administre os usuários do sistema, concedendo diferentes níveis de acesso de acordo com as necessidades. Esse recurso é especialmente útil em ambientes corporativos ou comunitários."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Alertas e Notificações: Receba alertas sobre a produção de energia, como quando um nível de produção mínimo não é atingido ou quando uma meta é alcançada."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Integração com API e Firebase: Os dados são armazenados com segurança, podendo ser integrados com outras plataformas por meio de uma API ou pelo Firebase. Isso permite que você acesse as informações em diferentes dispositivos e garanta a segurança dos dados."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <!-- Título Vantagens do Sistema -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="10dp"
+            android:text="Vantagens do Sistema:"
+            android:textSize="18sp"
+            android:textColor="#1976D2"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <!-- Vantagens -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Sustentabilidade: Incentiva o uso de fontes de energia limpas e renováveis, contribuindo para a redução de emissões de carbono."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Monitoramento em Tempo Real: Permite acompanhar a produção de energia ao vivo, facilitando ajustes e decisões em tempo hábil."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded,VisualLintLongText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Análise de Dados: Oferece insights detalhados para otimizar o uso de energia e maximizar a produção."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:text="Acessibilidade e Segurança: Interface acessível e intuitiva, com armazenamento seguro dos dados e acesso controlado."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+    </LinearLayout>
+</ScrollView>

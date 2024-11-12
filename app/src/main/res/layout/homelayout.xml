@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9AE84C"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#333333"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="WellDoneEnergy"
+            android:textColor="#FFFFFF"
+            android:textSize="27sp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="150dp"
+            android:src="@drawable/user"
+            android:tint="#FFFFFF"
+            tools:ignore="ContentDescription,UseAppTint" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/systemDescription"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|fill"
+        android:fontFamily="sans-serif-medium"
+        android:padding="8dp"
+        android:text="Sistema de gerenciamento de Energia"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,TextSizeCheck,TextContrastCheck,VisualLintBounds" />
+
+    <GridLayout
+        android:id="@+id/buttonGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="175dp"
+            android:layout_height="117dp"
+            android:layout_margin="12dp"
+            android:background="#67CE00"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="33dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/job"
+                android:tint="#FFFFFF"
+                tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInserirDados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                android:text="Insira dados de consumo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="175dp"
+            android:layout_height="117dp"
+            android:layout_margin="12dp"
+            android:background="#67CE00"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iconHistory"
+                android:layout_width="33dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/history"
+                android:tint="#FFFFFF"
+                tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHistorico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                android:text="Histórico de Consumo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="175dp"
+            android:layout_height="117dp"
+            android:layout_margin="12dp"
+            android:background="#67CE00"
+            android:padding="8dp"
+            tools:ignore="TextSizeCheck">
+
+
+            <ImageView
+                android:id="@+id/iconupdate"
+                android:layout_width="33dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/job"
+                android:tint="#FFFFFF"
+                tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAtualizarDados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                android:text="Atualizar dados de consumo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="175dp"
+            android:layout_height="117dp"
+            android:layout_margin="12dp"
+            android:background="#67CE00"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/iconlight"
+                android:layout_width="33dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/light"
+                android:tint="#FFFFFF"
+                tools:ignore="ContentDescription,UseAppTint,ImageContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnComoFunciona"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                android:text="Como Funciona"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
+        </FrameLayout>
+
+    </GridLayout>
+
+</LinearLayout>
