@@ -1,0 +1,171 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#9AE84C">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#333333"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="Icone de voltar"
+            android:src="@drawable/back"
+            android:tint="#FFFFFF"
+            tools:ignore="HardcodedText,RtlHardcoded,UseAppTint" />
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="310dp"
+            android:src="@drawable/logo"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="631dp"
+            android:layout_gravity="center"
+            android:background="@drawable/background"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:ignore="UselessParent,TextSizeCheck">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Novo cadastro"
+                android:textColor="#0000FF"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Preencha os dados para cadastrar!"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nome"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Telefone"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone"
+                android:inputType="phone"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Senha"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Confirmar senha"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirmar senha"
+                android:inputType="textPassword"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <!-- Texto interativo para login -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onLoginClick"
+                android:text="Já possui cadastro? Clique aqui"
+                android:textColor="#0000FF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TouchTargetSizeCheck" />
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#0000FF"
+                android:text="Cadastrar"
+                android:textColor="#FFFFFF"
+                tools:ignore="HardcodedText,RtlHardcoded,TouchTargetSizeCheck,TextSizeCheck" />
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
