@@ -73,6 +73,7 @@
                 tools:ignore="HardcodedText" />
 
             <EditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -90,6 +91,7 @@
                 tools:ignore="HardcodedText" />
 
             <EditText
+                android:id="@+id/et_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -99,6 +101,7 @@
 
 
             <TextView
+                android:id="@+id/tv_criar_conta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -111,8 +114,8 @@
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TouchTargetSizeCheck" />
 
-            <!-- Botão de entrar -->
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="90dp"
