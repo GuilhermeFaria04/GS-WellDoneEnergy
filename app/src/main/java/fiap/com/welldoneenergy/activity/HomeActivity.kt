@@ -52,6 +52,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setupButtons() {
         val buttonItems = listOf(
             ButtonItem("btnInserirDados", "Insira dados de consumo", R.drawable.job, FormActivity::class.java),
+            ButtonItem("btnHistorico", "Histórico de Consumo", R.drawable.history, HistoricoEnergiaActivity::class.java),
             ButtonItem("btnAtualizarDados", "Altere os dados de consumo", R.drawable.job, FormAtualizarActivity::class.java),
             ButtonItem("btnComoFunciona", "Como Funciona", R.drawable.light, ComoFuncionaActivity::class.java),
 
@@ -60,6 +61,7 @@ class HomeActivity : AppCompatActivity() {
 
         val buttonIds = listOf(
             R.id.btnInserirDados,
+            R.id.btnHistorico,
             R.id.btnAtualizarDados,
             R.id.btnComoFunciona
         )

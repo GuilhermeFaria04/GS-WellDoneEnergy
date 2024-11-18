@@ -1,0 +1,98 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#333333"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back"
+            android:tint="#FFFFFF"
+            tools:ignore="ContentDescription,RtlHardcoded,UseAppTint" />
+
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="310dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/logo"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </LinearLayout>
+
+    <!-- Box Verde -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#9AE84C"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Informe a data/Ano do consumo"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/spinnerMes"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:spinnerMode="dropdown"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <Spinner
+                android:id="@+id/spinnerAno"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:spinnerMode="dropdown"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/itemhistoricolayout" />
+
+    </LinearLayout>
+</LinearLayout>

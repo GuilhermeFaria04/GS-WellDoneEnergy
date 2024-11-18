@@ -1,0 +1,35 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textoTipoEnergia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Energia"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textoQuantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade: 0"
+        android:textColor="#555555"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data: 01-01-2024"
+        android:textColor="#777777"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp" />
+</LinearLayout>
