@@ -41,7 +41,7 @@
         tools:ignore="UselessParent">
 
         <LinearLayout
-            android:layout_width="325dp"
+            android:layout_width="350dp"
             android:layout_height="631dp"
             android:layout_gravity="center"
             android:background="@drawable/background"
@@ -169,7 +169,8 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#0000FF"
                 android:text="Cadastrar"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
     </FrameLayout>
