@@ -1,6 +1,6 @@
 # Sistema de Gerenciamento de Energia Renovável
 
-Nosso sistema é projetado para monitorar, registrar e analisar a produção de energia de fontes renováveis, como solar e eólica. Ele oferece funcionalidades completas para acompanhamento da geração de energia, gerenciamento de usuários e visualização de relatórios detalhados.
+Nosso sistema é projetado para monitorar, registrar e analisar a produção de energia, como solar e eólica. Ele oferece funcionalidades completas para acompanhamento da geração de energia, gerenciamento de usuários e visualização de relatórios detalhados.
 
 ---
 
