@@ -6,30 +6,61 @@
     android:padding="16dp"
     android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textoTipoEnergia"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tipo de Energia"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-    <TextView
-        android:id="@+id/textoQuantidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quantidade: 0"
-        android:textColor="#555555"
-        android:layout_marginTop="4dp"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textoTipoEnergia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tipo de Energia"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/textoData"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textoQuantidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Consumo: 0"
+            android:textColor="#555555"
+            android:layout_marginStart="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textoData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Data: 01-01-2024"
+            android:textColor="#777777"
+            android:layout_marginStart="4dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data: 01-01-2024"
-        android:textColor="#777777"
-        android:layout_marginTop="4dp"
-        android:textSize="14sp" />
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/buttonAtualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atualizar" />
+
+        <Button
+            android:id="@+id/buttonExcluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Excluir" />
+    </LinearLayout>
 </LinearLayout>

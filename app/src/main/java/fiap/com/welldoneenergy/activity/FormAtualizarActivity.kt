@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import fiap.com.welldoneenergy.R
@@ -36,7 +35,15 @@ class FormAtualizarActivity : AppCompatActivity() {
 
         firestore = FirebaseFirestore.getInstance()
 
-        consumoId = intent.getStringExtra("consumoId") ?: ""
+        consumoId = intent.getStringExtra("HISTORICO_ID") ?: ""
+        val tipoEnergia = intent.getStringExtra("TIPO_ENERGIA") ?: ""
+        val quantidade = intent.getStringExtra("QUANTIDADE") ?: ""
+        val data = intent.getStringExtra("DATA") ?: ""
+
+        // Preenchendo os campos com os dados recebidos
+        tipoEnergiaEditText.setText(tipoEnergia)
+        quantidadeGeradaEditText.setText(quantidade)
+        dataEditText.setText(data)
 
         // Ação do botão de voltar
         backIcon.setOnClickListener {
@@ -45,23 +52,18 @@ class FormAtualizarActivity : AppCompatActivity() {
             finish()
         }
 
-        // Carregar os dados se o consumoId for válido
-        if (consumoId.isNotEmpty()) {
-            carregarDados(consumoId)
-        }
-
         // Ação do botão de atualizar dados
         submitButton.setOnClickListener {
-            val tipoEnergia = tipoEnergiaEditText.text.toString()
-            val quantidadeGerada = quantidadeGeradaEditText.text.toString()
-            val data = dataEditText.text.toString()
+            val tipoEnergiaAtualizado = tipoEnergiaEditText.text.toString()
+            val quantidadeGeradaAtualizada = quantidadeGeradaEditText.text.toString()
+            val dataAtualizada = dataEditText.text.toString()
 
             // Validação de campos
-            if (tipoEnergia.isEmpty() || quantidadeGerada.isEmpty() || data.isEmpty()) {
+            if (tipoEnergiaAtualizado.isEmpty() || quantidadeGeradaAtualizada.isEmpty() || dataAtualizada.isEmpty()) {
                 return@setOnClickListener
             }
 
-            val consumoEnergia = ConsumoEnergia(tipoEnergia, quantidadeGerada, data)
+            val consumoEnergia = ConsumoEnergia(tipoEnergiaAtualizado, quantidadeGeradaAtualizada, dataAtualizada)
 
             if (consumoId.isEmpty()) {
                 // Criar novo registro
@@ -87,38 +89,5 @@ class FormAtualizarActivity : AppCompatActivity() {
             }
         }
 
-        // Ação do botão de excluir dados
-        val excluirButton: Button = findViewById(R.id.btnexcluir)
-        excluirButton.setOnClickListener {
-            if (consumoId.isNotEmpty()) {
-                firestore.collection("consumo_energia")
-                    .document(consumoId)
-                    .delete()
-                    .addOnSuccessListener {
-                        finish()
-                    }
-                    .addOnFailureListener {
-                        // Tratar erro
-                    }
-            }
-        }
-    }
-
-    // Função para carregar dados existentes
-    private fun carregarDados(consumoId: String) {
-        firestore.collection("consumo_energia")
-            .document(consumoId)
-            .get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    val consumoEnergia = documentSnapshot.toObject(ConsumoEnergia::class.java)
-                    tipoEnergiaEditText.setText(consumoEnergia?.tipoEnergia)
-                    quantidadeGeradaEditText.setText(consumoEnergia?.quantidadeGerada)
-                    dataEditText.setText(consumoEnergia?.data)
-                }
-            }
-            .addOnFailureListener {
-                // Tratar erro
-            }
     }
 }

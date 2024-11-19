@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +22,7 @@ class CadastroActivity : AppCompatActivity() {
     private lateinit var etSenha: EditText
     private lateinit var etConfirmarSenha: EditText
     private lateinit var btnCadastrar: Button
+    private lateinit var backIcon: ImageView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,13 @@ class CadastroActivity : AppCompatActivity() {
         etSenha = findViewById(R.id.et_senha)
         etConfirmarSenha = findViewById(R.id.et_confirmar_senha)
         btnCadastrar = findViewById(R.id.btn_cadastrar)
+        backIcon = findViewById(R.id.backIcon)
+
+        backIcon.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btnCadastrar.setOnClickListener {
             realizarCadastro()

@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -19,7 +20,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginLeft="10dp"
-            android:contentDescription="TODO"
+            android:contentDescription="Voltar"
             android:src="@drawable/back"
             android:tint="#FFFFFF"
             tools:ignore="ContentDescription,HardcodedText,RtlHardcoded,UseAppTint" />
@@ -33,6 +34,7 @@
             tools:ignore="ContentDescription,RtlHardcoded" />
     </LinearLayout>
 
+    <!-- Box Verde -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,9 +52,9 @@
             android:textSize="22sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,TextContrastCheck" />
-
     </LinearLayout>
 
+    <!-- Área Branca -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +71,6 @@
             android:gravity="center"
             android:layout_gravity="center"
             tools:ignore="HardcodedText" />
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -125,24 +126,12 @@
             tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
     </LinearLayout>
 
+    <!-- Botões -->
     <Button
         android:id="@+id/btnatualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Atualizar Dados"
-        android:backgroundTint="#1976D2"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/btnexcluir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Excluir Dados"
         android:backgroundTint="#1976D2"
         android:textColor="#FFFFFF"
         android:layout_gravity="center"

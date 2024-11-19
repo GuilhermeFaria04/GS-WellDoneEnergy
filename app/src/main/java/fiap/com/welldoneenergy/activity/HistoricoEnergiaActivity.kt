@@ -1,11 +1,13 @@
 package fiap.com.welldoneenergy.activity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,10 +19,10 @@ import fiap.com.welldoneenergy.model.HistoricoEnergia
 
 class HistoricoEnergiaActivity : AppCompatActivity() {
 
-    private lateinit var spinnerMes: Spinner
-    private lateinit var spinnerAno: Spinner
     private lateinit var recyclerHistorico: RecyclerView
     private lateinit var bancoFirebase: FirebaseFirestore
+    private lateinit var progressBar: ProgressBar
+    private lateinit var backIcon: ImageView
 
     private lateinit var adaptadorHistorico: HistoricoAdapter
     private val listaHistorico = mutableListOf<HistoricoEnergia>()
@@ -30,55 +32,20 @@ class HistoricoEnergiaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.historicolayout)
 
-        spinnerMes = findViewById(R.id.spinnerMes)
-        spinnerAno = findViewById(R.id.spinnerAno)
         recyclerHistorico = findViewById(R.id.recyclerViewHistorico)
+        progressBar = findViewById(R.id.progressBar)
+        backIcon = findViewById(R.id.backIcon)
 
         bancoFirebase = FirebaseFirestore.getInstance()
 
-        configurarSpinners()
+        backIcon.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         configurarRecyclerView()
-        carregarDadosMaisRecentes()
-
-        spinnerMes.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                carregarDadosPorData()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
-        }
-
-        spinnerAno.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                carregarDadosPorData()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
-        }
-    }
-
-    private fun configurarSpinners() {
-        val meses = listOf(
-            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-        )
-        spinnerMes.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, meses)
-
-        // Configurando o Spinner de anos
-        val anos = (2000..2024).toList()
-        spinnerAno.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, anos)
+        carregarHistorico() // Inicializando com todos os dados
     }
 
     private fun configurarRecyclerView() {
@@ -87,51 +54,36 @@ class HistoricoEnergiaActivity : AppCompatActivity() {
         recyclerHistorico.adapter = adaptadorHistorico
     }
 
-    private fun carregarDadosMaisRecentes() {
+    private fun carregarHistorico() {
+        progressBar.visibility = View.VISIBLE
+
         bancoFirebase.collection("consumo_energia")
-            .orderBy("dataRegistro", Query.Direction.DESCENDING)
-            .limit(4)
+            .orderBy("data", Query.Direction.DESCENDING)
             .get()
-            .addOnSuccessListener { querySnapshot ->
-                val tamanhoAnterior = listaHistorico.size
-                listaHistorico.clear()
+            .addOnSuccessListener { snapshot ->
+                progressBar.visibility = View.GONE
 
-                for (document in querySnapshot) {
-                    val historico = document.toObject(HistoricoEnergia::class.java)
-                    listaHistorico.add(historico)
-                }
+                if (snapshot != null && !snapshot.isEmpty) {
+                    listaHistorico.clear()
+                    for (document in snapshot.documents) {
+                        val historico = document.toObject(HistoricoEnergia::class.java)
+                        if (historico != null) {
+                            historico.id = document.id // Salva o ID do documento
+                            listaHistorico.add(historico)
+                        }
+                    }
+                    adaptadorHistorico.notifyDataSetChanged()
 
-                if (listaHistorico.size > tamanhoAnterior) {
-                    adaptadorHistorico.notifyItemRangeInserted(tamanhoAnterior, listaHistorico.size - tamanhoAnterior)
+                    Log.d("Firestore", "Itens carregados: ${listaHistorico.size}")
+                } else {
+                    Log.d("Firestore", "Nenhum dado encontrado.")
+                    Toast.makeText(this, "Nenhum dado encontrado.", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { exception ->
-                // Tratar erro
-            }
-    }
-
-    private fun carregarDadosPorData() {
-        val mesSelecionado = spinnerMes.selectedItemPosition + 1
-        val anoSelecionado = spinnerAno.selectedItem.toString()
-
-        bancoFirebase.collection("consumo_energia")
-            .whereGreaterThanOrEqualTo("dataRegistro", "$anoSelecionado-${String.format("%02d", mesSelecionado)}-01")
-            .whereLessThan("dataRegistro", "$anoSelecionado-${String.format("%02d", mesSelecionado + 1)}-01")
-            .orderBy("dataRegistro", Query.Direction.DESCENDING)
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                listaHistorico.clear()
-
-                for (document in querySnapshot) {
-                    val historico = document.toObject(HistoricoEnergia::class.java)
-                    listaHistorico.add(historico)
-                }
-
-                // Notifica que os dados foram alterados
-                adaptadorHistorico.notifyDataSetChanged()
-            }
-            .addOnFailureListener { exception ->
-                // Tratar erro
+                progressBar.visibility = View.GONE
+                Log.e("Firestore", "Erro ao carregar dados", exception)
+                Toast.makeText(this, "Erro ao carregar dados: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }
 }
