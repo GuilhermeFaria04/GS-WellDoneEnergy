@@ -12,6 +12,8 @@ Nosso sistema é projetado para monitorar, registrar e analisar a produção de 
 - Lucas Carabolad Bob (RM550519)
 - Thiago Ulrych (RM97951)
 
+---
+
 ## 🚀 Funcionalidades
 
 - **Monitoramento de enrgia**: Veja a produção de energia.
